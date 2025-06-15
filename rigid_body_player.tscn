@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3lsx80dmv3l7"]
+
+[ext_resource type="Script" uid="uid://ce3og1x7vgr8g" path="res://RigidBody3D_player.gd" id="1_e24n7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_61iub"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnlct"]
+albedo_color = Color(1, 0.392157, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uxgtu"]
+material = SubResource("StandardMaterial3D_bnlct")
+
+[node name="RigidBody3D" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_e24n7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_61iub")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_uxgtu")
+
+[node name="pivot" type="Node3D" parent="."]

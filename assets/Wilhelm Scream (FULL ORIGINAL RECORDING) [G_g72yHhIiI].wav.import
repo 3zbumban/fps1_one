@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd0fq6sn3tk5x"
+path="res://.godot/imported/Wilhelm Scream (FULL ORIGINAL RECORDING) [G_g72yHhIiI].wav-deea496e7dd014c2bfb2b3f4f8d70417.sample"
+
+[deps]
+
+source_file="res://assets/Wilhelm Scream (FULL ORIGINAL RECORDING) [G_g72yHhIiI].wav"
+dest_files=["res://.godot/imported/Wilhelm Scream (FULL ORIGINAL RECORDING) [G_g72yHhIiI].wav-deea496e7dd014c2bfb2b3f4f8d70417.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfsnn658k1us5"]
+
+[ext_resource type="Script" uid="uid://byyg2s5xbwpww" path="res://scenes/cube_item.gd" id="1_mosbn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a34aj"]
+albedo_color = Color(0.328983, 0.780312, 0, 1)
+metallic = 0.17
+
+[sub_resource type="BoxMesh" id="BoxMesh_6obb1"]
+material = SubResource("StandardMaterial3D_a34aj")
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sl7x6"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="cube_item" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+script = ExtResource("1_mosbn")
+item_mass = 0.01
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+mass = 0.1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_6obb1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_sl7x6")

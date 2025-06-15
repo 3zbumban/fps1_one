@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvfsisuwrkwni"]
+
+[ext_resource type="Script" uid="uid://bouw2wqga8l27" path="res://scripts/enemy.gd" id="1_rogrl"]
+[ext_resource type="AudioStream" uid="uid://cd0fq6sn3tk5x" path="res://assets/Wilhelm Scream (FULL ORIGINAL RECORDING) [G_g72yHhIiI].wav" id="2_sx1d6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7hy7t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6bma"]
+albedo_color = Color(1, 0.270588, 0.470588, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_va346"]
+material = SubResource("StandardMaterial3D_v6bma")
+
+[node name="enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_rogrl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7hy7t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_va346")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20654, 0)
+pixel_size = 0.008
+text = "100/100"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_sx1d6")
+volume_db = -2.735
+max_distance = 25.0

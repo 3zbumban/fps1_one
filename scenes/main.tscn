@@ -1,0 +1,859 @@
+[gd_scene load_steps=15 format=3 uid="uid://bmejwis63vk7y"]
+
+[ext_resource type="Script" uid="uid://dq3jc5bqclb5w" path="res://scripts/main.gd" id="1_rtjva"]
+[ext_resource type="Script" uid="uid://bso7i2gkulmi0" path="res://scripts/PanelContainer.gd" id="3_dw87j"]
+[ext_resource type="PackedScene" uid="uid://bfsnn658k1us5" path="res://scenes/cube_item.tscn" id="4_0y5e0"]
+[ext_resource type="PackedScene" uid="uid://cos54vr1etmdl" path="res://scenes/yellow_crate.tscn" id="4_lfnvs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3torp"]
+size = Vector3(100, 2, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31dxg"]
+albedo_color = Color(0.51, 0.0663, 0.103275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6oi8b"]
+material = SubResource("StandardMaterial3D_31dxg")
+size = Vector3(100, 2, 100)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1788i"]
+sky_top_color = Color(0.279249, 0.469129, 0.617222, 1)
+sky_horizon_color = Color(0.696159, 0.658563, 0.483653, 1)
+sky_curve = 0.172305
+
+[sub_resource type="Sky" id="Sky_viuif"]
+sky_material = SubResource("ProceduralSkyMaterial_1788i")
+
+[sub_resource type="Environment" id="Environment_12lxt"]
+background_mode = 2
+sky = SubResource("Sky_viuif")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ts4qd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gxxj0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04s28"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kds36"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_rtjva")
+greeny_max = 100
+DONUT_TIMER = 0.25
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+shape = SubResource("BoxShape3D_3torp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+mesh = SubResource("BoxMesh_6oi8b")
+skeleton = NodePath("../..")
+
+[node name="map" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -2.5)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -3.5)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -3.5)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -3.5)
+use_collision = true
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 4.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 3.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.5, -8.5)
+use_collision = true
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -7.5)
+use_collision = true
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -8.5)
+use_collision = true
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -8.5)
+use_collision = true
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 3.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 3.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, -8.5)
+use_collision = true
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 3.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.5, -8.5)
+use_collision = true
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D47" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D48" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D49" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D50" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D51" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D52" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 3.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D53" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.5, -8.5)
+use_collision = true
+
+[node name="CSGBox3D54" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D55" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.5, -9.5)
+use_collision = true
+
+[node name="CSGBox3D56" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D57" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D58" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.5, -10.5)
+use_collision = true
+
+[node name="CSGBox3D59" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D60" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D61" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D62" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 3.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -11.5)
+use_collision = true
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -3.5)
+use_collision = true
+
+[node name="yellow_crate" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -7)
+
+[node name="yellow_crate2" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5)
+
+[node name="yellow_crate3" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -1, -3)
+
+[node name="yellow_crate4" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -9)
+
+[node name="yellow_crate5" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -11)
+
+[node name="yellow_crate14" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -1, -11)
+
+[node name="yellow_crate15" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -11)
+
+[node name="yellow_crate12" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2, -11)
+
+[node name="yellow_crate16" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 3, -11)
+
+[node name="yellow_crate17" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 3, -13)
+
+[node name="yellow_crate13" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 3, -13)
+
+[node name="yellow_crate6" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3, -13)
+
+[node name="yellow_crate7" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, -13)
+
+[node name="yellow_crate8" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, -13)
+
+[node name="yellow_crate9" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, -13)
+
+[node name="yellow_crate10" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, -13)
+
+[node name="stairs_border_left" type="Node" parent="map"]
+
+[node name="CSGBox3D63" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 4.5, -11.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D64" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 3.5, -11.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D65" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 3.5, -10.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D66" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2.5, -9.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D67" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1.5, -8.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D68" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -7.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D69" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -10.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D70" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2.5, -10.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D71" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1.5, -9.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D72" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -9.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D73" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -8.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D74" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2.5, -11.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D75" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1.5, -11.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D76" type="CSGBox3D" parent="map/stairs_border_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 0.5, -11.5)
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="yellow_crate11" parent="map" instance=ExtResource("4_lfnvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -13)
+
+[node name="world" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+environment = SubResource("Environment_12lxt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world"]
+transform = Transform3D(0.942921, -1.45566e-08, 0.333017, -0.333017, -4.12164e-08, 0.942921, 0, -1, -4.37114e-08, 8.18091, 30.1182, 0)
+light_color = Color(0.98, 0.98, 0.2842, 1)
+light_energy = 0.781
+shadow_enabled = true
+
+[node name="hud" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="hud"]
+clip_contents = true
+custom_minimum_size = Vector2(440, 60)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 545.0
+offset_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_dw87j")
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="hud/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="hud"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -156.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 181.0
+grow_horizontal = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="hud/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="hud/Panel/CenterContainer"]
+layout_mode = 2
+text = "Controlls:
+move: W A S D
+jump: SPACE
+crouch: STRG
+console: ^
+spawn enemy: E
+exit: STRG + Q"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="cube_pile" type="Node3D" parent="Node3D"]
+
+[node name="cube_item3" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_pile2" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+
+[node name="cube_item3" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile2" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_pile3" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
+
+[node name="cube_item3" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile3" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_pile4" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9)
+
+[node name="cube_item3" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile4" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_pile5" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="cube_item3" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile5" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_pile6" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="cube_item3" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile6" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_pile7" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8)
+
+[node name="cube_item3" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.125, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item4" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.425, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item5" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.725, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item6" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.025, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item7" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.325, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item8" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.625, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item9" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1.925, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item10" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.225, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="cube_item11" parent="Node3D/cube_pile7" instance=ExtResource("4_0y5e0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2.525, 6.1)
+item_mass = 1.0
+item_color = Color(0.955216, 0.617875, 0.892987, 1)
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("SphereShape3D_ts4qd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+mesh = SubResource("SphereMesh_gxxj0")
+skeleton = NodePath("../../RigidBody3D2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, 0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_04s28")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_kds36")
+
+[node name="world_cam" type="Camera3D" parent="."]
+transform = Transform3D(0.866025, -0.12941, 0.482963, 0, 0.965926, 0.258819, -0.5, -0.224144, 0.836516, 9, 6, 21)
+fov = 90.0
